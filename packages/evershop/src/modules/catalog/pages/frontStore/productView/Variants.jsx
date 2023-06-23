@@ -76,9 +76,6 @@ export default function Variants({
     url.searchParams.set('ajax', true);
     url.searchParams.set(attributeCode, optionId);
     await AppContextDispatch.fetchPageData(url);
-    url.searchParams.delete('ajax');
-    // eslint-disable-next-line no-restricted-globals
-    history.pushState(null, '', url);
     setAttributes((previous) =>
       previous.map((a) => {
         if (a.attributeCode === attributeCode) {
